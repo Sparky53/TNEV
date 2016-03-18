@@ -4,9 +4,9 @@
  Echo sur Arduino broche 7 
  Trig sur Arduino broche 8*/
 
-#define echoPin 7 // broche Echo 
-#define trigPin 8 // broche Trigger (declenchement)
-#define LEDPin 13 // LED de la carte Ardiono (branché sur la broche 13)
+#define echoPin 4 // broche Echo 
+#define trigPin 2 // broche Trigger (declenchement)
+
 
 int maximumRange = 200; // distance Maximale acceptée (en cm)
 int minimumRange = 0;   // distance Minimale acceptée (en cm)
@@ -48,7 +48,6 @@ void loop() {
     /* Envoyer une valeur négative sur la liaison série.
        Activer la LED pour indiquer que l'erreur */
    Serial.println("-1");
-   digitalWrite(LEDPin, HIGH); 
  }
  else {
    /* Envoyer la distance vers l'ordinateur via liaison série.
@@ -58,7 +57,6 @@ void loop() {
         // Serial print centimeters :
    Serial.print("cm ");
    Serial.println(distance);
-   digitalWrite(LEDPin, LOW); 
  }
  
  //Attendre 50ms avant d'effectuer la lecture suivante.

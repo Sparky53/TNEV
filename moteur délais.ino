@@ -68,17 +68,52 @@ void loop()
    Serial.println(distance);
  }
 
-  if (distance <= 20) {
-SetMotor2(0, true);
+  if (distance <= 30) {
+SetMotor2(0,true);   //arrêt des moteurs
 SetMotor1(0,true);
 delay (2000);
-SetMotor2(150, true);
-SetMotor1(150, true);
-delay (10000);
-SetMotor2(0, true);
-SetMotor1(0, true);
-delay (10000);  
-}
+SetMotor2 (150,false);  //tourner à droite 90°
+SetMotor1 (150,true);
+delay (800);
+SetMotor2 (0,true); //arrêt des moteurs
+SetMotor1 (0,true);
+delay (2000);
+SetMotor2 (150,true); //avancer 50cm
+SetMotor1 (150,true);
+delay (2000);
+SetMotor2 (0,true); //arrêter les moteurs
+SetMotor1 (0,true);
+delay(2000);
+SetMotor2 (150,true); //tourner à gauche 90°
+SetMotor1 (150,false);
+delay (800);
+SetMotor2 (0,true); //arrêt des moteurs
+SetMotor1 (0,true);
+delay(2000);
+SetMotor2 (150,true); //avancer 65cm
+SetMotor1 (150,true);
+delay(2600);
+SetMotor2 (0,true); //arrêter les moteurs
+SetMotor1 (0,true);
+delay(2000);
+SetMotor2 (150,true);  //tourner à gauche 90°
+SetMotor1 (150,false);
+delay(800);
+SetMotor2 (0,true); //arrêter les moteurs
+SetMotor1 (0,true);
+delay(2000);
+SetMotor2 (150,true); //avancer 50cm
+SetMotor1 (150,true);
+delay(2000);
+SetMotor2 (0,true); //arrêter les moteurs
+SetMotor1 (0,true);
+delay(2000);
+SetMotor2 (150,false);
+SetMotor1(150,true);
+delay (800);
+
+} //50cm = 2000ms
+// 65cm = 2600ms
   else {
     SetMotor2(200, true);
     SetMotor1(200, true);
